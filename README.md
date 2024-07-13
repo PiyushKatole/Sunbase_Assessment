@@ -1,43 +1,4 @@
 This project involves the integration of a set of APIs to create a customer management web application. The application will allow users to authenticate, view, create, update, and delete customer records using API calls. The APIs use Bearer authentication for secure access.
-
-##API Endpoints:
-
-Authentication API:
-Path: https://qa2.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp
-Method: POST
-Body: JSON object containing login credentials
-Response: Returns a bearer token for further API calls
-Create a New Customer API:
-
-Path: https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp
-Method: POST
-Parameters: cmd=create
-Header: Authorization with Bearer token obtained from the Authentication API
-Body: JSON object containing customer details (first_name and last_name are mandatory)
-Response: Success (201) or Failure (400) with appropriate error messages
-Get Customer List API:
-
-Path: https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp
-Method: GET
-Parameters: cmd=get_customer_list
-Header: Authorization with Bearer token obtained from the Authentication API
-Response: Returns a list of customer objects in JSON format
-Delete a Customer API:
-
-Path: https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp
-Method: POST
-Parameters: cmd=delete and uuid of a specific customer
-Header: Authorization with Bearer token obtained from the Authentication API
-Response: Success (200) or Failure (500 or 400) with appropriate error messages
-Update a Customer API:
-
-Path: https://qa2.sunbasedata.com/sunbase/portal/api/assignment.jsp
-Method: POST
-Parameters: cmd=update and uuid of a specific customer
-Header: Authorization with Bearer token obtained from the Authentication API
-Body: JSON object containing updated customer details
-Response: Success (200) or Failure (500 or 400) with appropriate error messages
-
 Application Workflow:
 Login Screen:
 Users can log in using their credentials. The API will authenticate the user and return a bearer token, which will be stored for further API calls.
